@@ -1,0 +1,838 @@
+/*
+Hey there, friend.
+Checking out the css file, huh?
+Hope you find everything you need.
+If not feel free to drop me a line.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&family=Orbitron:wght@900&family=DotGothic16&family=VT323&display=swap');
+$frameGrey : #545454;
+$frameDeepGrey : #383838;
+$cassetteRed : #b10000;
+$cassetteBlue : #3b3b74;
+$buttonCol : #bfbfbf;
+$buttonColHov : #535353;
+$buttonMark : #424242;
+$popMain : white;
+$popHighlight : purple;
+iframe#player{
+    position: absolute;
+    left:-500%;
+    width: 500px !important;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-image: url('../uk-number-ones/metaImg.jpg');
+    &::before{
+        content: "";
+        background-color: #240024;
+        width: 100%;
+        height: 3000px;
+        opacity: 0.8;
+    }
+}
+.cassetteDeck{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    border: solid 2px black;
+    width: 500px;
+    height:400px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 5px #8b497f;
+    .videoTitle{
+        font-family: 'DotGothic16', monospace;
+        width:70%;
+        height: 35px;
+        right: 50%;
+        transform: translate(50%, 0);
+        position: absolute;
+        top:10px;
+        color: forestgreen;
+        background-color: rgb(20, 20, 20);
+        box-shadow: inset 0 0 0 2px forestgreen;
+        border: #505050 1px solid;
+        border-radius: 5px;
+        padding:10px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 24px;
+    }
+    .cassetteTape{
+        position: absolute;
+        left: -32px;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        .videoTitleTape{
+            font-family: 'Orbitron','Noto Sans JP', sans-serif;
+            width:80%;
+            right: 50%;
+            transform: translate(50%, 0) rotate(180deg);
+            position: absolute;
+            top:235px;
+            background-color: #cbe188;
+            padding:10px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 24px;
+        }
+        .sideLabel{
+            position: absolute;
+            border-radius: 50%;
+            bottom: 50%;
+            right: 12%;
+            width: 40px;
+            font-size: 30px;
+            aspect-ratio: 1 / 1;
+            background-color: #197a5f;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            transform: rotate(180deg) translate(0,-50%);
+        }
+        .maxwell{
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            font-size: 18px;
+            font-family: 'Orbitron', sans-serif;
+            transform: rotate(180deg) translate(50%,-50%);
+            color: #8faf8a;
+        }
+        .magTape{
+            position: absolute;
+            top: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .magTapeFrame{
+                background-color: #875f5f;
+                width: 60px;
+                height: 60px;
+                position: absolute;
+                top: 50%;
+                transform: translate(0,-50%);
+                border-radius: 50%;
+                border: 1px solid black;
+            }
+            .tapeReel{
+                min-width:60px;
+                max-width: 150px;
+                aspect-ratio: 1 / 1;
+                background-color: #421e1e;
+                border-radius: 50%;
+                position: relative;
+                border: 1px solid black;
+                .strand{
+                    position: absolute;
+                    background-color: #421e1e;
+                    width: 3px;
+                    height: 100px;
+                    top: 50%;
+                    transform-origin: top;
+                    border: 1px solid black;
+                    z-index: -1;
+                }
+            }
+            &.leftTape{
+                left:0%;
+                transform: translate(50%,-50%);
+                .tapeReel{
+                    width:60px;
+                    .strand{
+                        left:0;
+                        transform: rotate(135deg);
+                    }
+                }
+            }
+            &.rightTape{
+                right:0%;
+                transform: translate(-50%,-50%);
+                .tapeReel{
+                    width:150px;
+                    .strand{
+                        right:0;
+                        transform: rotate(-135deg);
+                    }
+                }
+            }
+        }
+        .spinnerBase{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            transform: translate(0,-50%);
+            border: 1px solid black;
+            box-sizing: border-box;
+            &.leftBase{
+                left:20%;
+                transform: translate(50%,-50%);
+            }
+            &.rightBase{
+                right:20%;
+                transform: translate(-50%,-50%);
+            }
+        }
+        .spinner{
+            clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+            width: 50px;
+            height: 50px;
+            background-color: #2c4f50;
+            position: absolute;
+            top: 50%;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            &.leftSpinner{
+                animation-name: completeSpinLeft;
+                left:20%;
+            }
+            &.rightSpinner{
+                animation-name: completeSpinRight;
+                right:20%;
+            }
+            &.paused{
+                animation-play-state: paused;
+            }
+            .spinnerCentre{
+                width: 5px;
+                height: 5px;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                border-radius: 50%;
+                box-shadow:
+                0 0 0 5px rgba(0, 0, 0, 0.5),
+                0 0 0 8px rgba(0, 0, 0, 0.4);
+            }
+            .spinnerNub{
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                &.nubOne{
+                    top: -44px;
+                    left: 50%;
+                    transform: translate(-50%,0px);
+                }
+                &.nubTwo{
+                    top: -22px;
+                    right: -37px;
+                }
+                &.nubThree{
+                    bottom: -22px;
+                    right: -37px;
+                }
+                &.nubFour{
+                    bottom: -44px;
+                    left: 50%;
+                    transform: translate(-50%,0px);
+                }
+                &.nubFive{
+                    top: -22px;
+                    left: -37px;
+                }
+                &.nubSix{
+                    bottom: -22px;
+                    left: -37px;
+                }
+            }
+        }
+        .mandy{
+            position: absolute;
+            top: 35%;
+            left: 10%;
+            width: 30px;
+            aspect-ratio: 1 / 1;
+            transform: rotate(180deg);
+            .circle{
+                position: absolute;
+                border-radius: 50%;
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                background-color: red;
+                bottom: 0;
+            }
+            .whisp{
+                border-radius: 50%;
+                width: 30%;
+                aspect-ratio: 1 / 1;
+                background-color: red;
+                position: absolute;
+                &.whispOne{
+                    bottom: 70%;
+                    left: -30%;
+                }
+                &.whispTwo{
+                    bottom: 120%;
+                    left: -30%;
+                }
+                &.whispThree{
+                    bottom: 160%;
+                    left: 0%;
+                }
+            }
+        }
+    }
+    .stereo{
+        .casing{
+            position: absolute;
+            inset: 0;
+            background-color: grey;
+            clip-path: polygon(0% 0%, 0% 35%, 80% 35%, 80% 65%, 0% 65%, 0% 100%, 100% 100%, 100% 0%);
+            .dots{
+                position: absolute;
+                display: flex;
+                width:50%;
+                bottom: 26%;
+                transform: translate(0, -50%);
+                justify-content: space-evenly;
+                .dot{
+                    border-radius: 50%;
+                    width: 12px;
+                    aspect-ratio: 1 / 1;
+                    background-color: $cassetteRed;
+                    &.dotsFour{
+                        background-color: #bfc13d;
+                    }
+                }
+            }
+            .windowFrameOne{
+                background-color: $frameDeepGrey;
+                width: 100%;
+                height: 300px;
+                position: absolute;
+                bottom: 0;
+                clip-path: polygon(0% 0%, 90% 0%, 90% 65%, 101% 100%, 100% 100%, 89% 65%, 89% 1%, 0% 1%);
+            }
+            .windowFrameTwo{
+                background-color: $frameGrey;
+                width: 100%;
+                height: 300px;
+                position: absolute;
+                bottom: 0;
+                clip-path: polygon(0% 65%, 50% 65%, 50% 73%, 84% 73%, 84% 65%, 88% 65%, 85% 66%, 85% 74%, 49% 74%, 49% 66%, 0% 66%);
+            }
+            .windowFrameThree{
+                background-color: $frameDeepGrey;
+                width: 100%;
+                height: 3px;
+                position: absolute;
+                bottom: 68px;
+            }
+            .windowFrameFour{
+                border: solid 3px $frameGrey;
+                width: 70px;
+                height: 100%;
+                position: absolute;
+                bottom: 105px;
+                right: -35px;
+                border-radius: 20px;
+                background-color: $cassetteRed;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 10px;
+                    border-radius: 10px;
+                    width: 100%;
+                    height: 100%;
+                    left: 10px;
+                    border: solid 3px $frameGrey;
+                    background-color: gray;
+                }
+            }
+            .windowFrameFive{
+                position: absolute;
+                overflow: hidden;
+                width: 100%;
+                height: 350px;
+                right:0;
+                .solidHorBlueBar{
+                    position: absolute;
+                    width: 100%;
+                    height:10px;
+                    background-color: $cassetteBlue;
+                    border: solid 3px $frameGrey;
+                    border-left: 0;
+                    border-right: 0;
+                    &.horBarTop{
+                        top: 75px;
+                        left: -20px;
+                    }
+                    &.horBarBottom{
+                        top: 307px;
+                        right: -9px;
+                        width: 15px;
+                    }
+                }
+                .solidCorBlueBar{
+                    position: absolute;
+                    width: 12px;
+                    height: 10px;
+                    background-color: $cassetteBlue;
+                    border: solid 3px $frameGrey;
+                    border-bottom: 0;
+                    border-left: 0;
+                    border-radius: 0 10px 0 0;
+                    &.topCor{
+                        right:5px;
+                        top:75px;
+                    }
+                    &.bottomCor{
+                        right:6px;
+                        top:310px;
+                        transform: rotate(180deg);
+                    }
+                }
+                .solidVerBlueBar{
+                    position: absolute;
+                    width: 10px;
+                    height:191px;
+                    background-color: $cassetteBlue;
+                    border: solid 3px $frameGrey;
+                    border-top: 0;
+                    border-bottom: 0;
+                    right:5px;
+                    top: 88px;
+                    &.lowerVerBlue{
+                        height:15px;
+                        top:295px;
+                    }
+                }
+            }
+            .windowFrameSix{
+                .sixBar{
+                    height: 5px;
+                    width: 20%;
+                    position: absolute;
+                    background-color: #bfc13d;
+                    border: solid 3px $frameGrey;
+                    border-left:0;
+                    border-right:0;
+                    &.topSix{
+                        top:20px;
+                    }
+                    &.middleSix{
+                        top:35px;
+                        right:0;
+                    }
+                    &.bottomSix{
+                        top:50px;
+                    }
+                }
+            }
+        }
+        .glassFront{
+            background-color: rgba(100, 185, 185, 0.36);
+            width: 80%;
+            height: 30%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0,-50%);
+            border: solid 2px #343485;
+            border-left: 0;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 0 0 10px grey, 0 0 0 12px $frameGrey;
+            .reflectLight{
+                background-color: rgba(255, 255, 255, 0.25);
+                width:100%;
+                height: 65%;
+                position:absolute;
+                bottom:0;
+                left:-10px;
+                border-radius: 0 5px 0 0;
+            }
+            .strips{
+                padding-top: 10px;
+                clip-path: polygon(2% 0%, 100% 0%, 25% 78%,67% 81%,51% 100%, 2% 100%);
+                .strip{
+                    width: 100%;
+                    height: 10px;
+                    margin-bottom: 10px;
+                    &.white{
+                        background-color: #e0fbff;
+                    }
+                    &.red{
+                        background-color: $cassetteRed;
+                    }
+                }
+            }
+        }
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 90%;
+        bottom: 10px;
+        .button{
+            width:50px;
+            height:50px;
+            background-color: $buttonCol;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 5px;
+            border: solid 2px $frameDeepGrey;
+            box-sizing: border-box;
+            &:not(.ytButton){
+                &::after{
+                    content:"";
+                    border: 1px solid $buttonMark;
+                    box-sizing: border-box;
+                    width: 40px;
+                    height: 30px;
+                    overflow: hidden;
+                    position: absolute;
+                }
+            }
+            &.volDown{
+                .mark{
+                    width: 30px;
+                    height: 15px;
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+                    .speaker{
+                        width: 40%;
+                        margin-right: 10%;
+                        height:100%;
+                        background-color: $buttonMark;
+                        clip-path: polygon(0% 25%, 50% 25%,100% 0%,100% 100%,50% 75%,0 75%);
+                    }
+                }
+            }
+            &.volUp{
+                .mark{
+                    width: 30px;
+                    height: 15px;
+                    display: flex;
+                    position: relative;
+                    .speaker{
+                        width: 40%;
+                        margin-right: 10%;
+                        height:100%;
+                        background-color: $buttonMark;
+                        clip-path: polygon(0% 25%, 50% 25%,100% 0%,100% 100%,50% 75%,0 75%);
+                    }
+                    .blip{
+                        height: 50%;
+                        aspect-ratio: 1/1;
+                        background-color: $buttonMark;
+                        border-radius: 50%;
+                        position: absolute;
+                        transform: translate(-50%,-50%);
+                        left:40%;
+                        top:50%;
+                    }
+                    .waves{
+                        width: 50%;
+                        height:100%;
+                        clip-path: polygon(25% 25%, 100% 0%, 60% 30%, 90% 50%, 60% 70%, 100% 100%, 25% 75%);
+                        background-image: radial-gradient(5px at left, #0000 100%, $buttonMark);
+                    }
+                }
+            }
+            &.prev{
+                .mark{
+                    width: 30px;
+                    height: 15px;
+                    background-color: $buttonMark;
+                    clip-path: polygon(0% 0%, 18% 0%, 18% 50%, 59% 0%, 59% 50%, 100% 0%, 100% 100%, 59% 50%, 59% 100%, 18% 50%, 18% 100%, 0% 100%);
+                }
+            }
+            &.pause{
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                animation-direction: alternate;
+                animation-name: pauseFlash;
+                &:not(.readyToPlay){
+                    animation: none;
+                }
+                .mark{
+                    width: 30px;
+                    height: 15px;
+                    background-color: $buttonMark;
+                    clip-path: polygon(0% 0%, 50% 50%, 50% 0,67% 0,67% 50%, 83% 50%,83% 0%,100% 0%, 100% 100%, 83% 100%, 83% 50%,67% 50%,67% 100%, 50% 100%,50% 50%, 0% 100%);
+                }
+            }
+            &.next{
+                .mark{
+                    width: 30px;
+                    height: 15px;
+                    background-color: $buttonMark;
+                    clip-path: polygon(0% 0%, 41% 50%, 41% 0,82% 50%, 82% 50%, 82% 0%, 100% 0%, 100% 100%, 82% 100%, 82% 50%, 41% 100%, 41% 50%, 0% 100%);
+                }
+            }
+            &.restart{
+                display: none;
+            }
+            &.eject{
+                .mark{
+                    width: 30px;
+                    height: 15px;
+                    background-color: $buttonMark;
+                    clip-path: polygon(50% 0%, 75% 50%, 50% 50%, 50% 70%, 75% 70%,75% 100%,25% 100%,25% 70%, 50% 70%, 50% 50%, 25% 50%);
+                }
+            }
+            &.ytButton{
+                .butt{
+                    width: 40px;
+                    height: 30px;
+                    background-color: red;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    .triangle{
+                        background-color: white;
+                        clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+                        width: 15px;
+                        aspect-ratio: 1/1;
+                    }
+                }
+            }
+            &.info{
+                .parachuter{
+                    border: 1px solid $buttonMark;
+                    box-sizing: border-box;
+                    position: relative;
+                    width: 40px;
+                    height: 30px;
+                    overflow: hidden;
+                    .head{
+                        background-color: $buttonMark;
+                        width: 10px;
+                        aspect-ratio: 1/1;
+                        position: absolute;
+                        top:50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        border-radius: 50%;
+                    }
+                    .body{
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0px;
+                        clip-path: polygon(99% 0%, 79% 22%,51% 22%,51% 27%,79% 27%,45% 69%,15% 62%,15% 66%,43% 74%,37% 112%,40% 112%,48% 72%,82% 31%,90% 69%,94% 69%,86% 29%, 99% 8%);
+                        width: 50%;
+                        height: 50%;
+                        background-color: $buttonMark;
+                    }
+                    .chuteRound{
+                        position: absolute;
+                        width: 25px;
+                        height: 20px;
+                        border-radius: 50% 50% 0 0;
+                        box-shadow: inset 0 0 0 2px $buttonMark;
+                        clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 50%,0 50%);
+                        transform: rotate(38deg) translate(9px, -9px);
+                    }
+                }
+            }
+            &:hover{
+                background-color: $buttonColHov;
+            }
+        }
+    }
+    .volBarContainer{
+        position: absolute;
+        left:0px;
+        bottom:50%;
+        transform: translate(0,50%);
+        width:10px;
+        height:150px;
+        display: flex;
+        align-items: flex-end;
+        padding:5px;
+        border: solid black 1px;
+        background-color: #3c3c3c;
+        &:before{
+            content:"";
+            background-color: rgb(190, 190, 190);
+            width: 3px;
+            height:100%;
+        }
+        .volBar{
+            height:0%;
+            width:100%;
+        }
+    }
+    .time{
+        font-family: 'VT323', monospace;
+        font-size: 1.8rem;
+        line-height: 1;
+        padding: 0 1rem;
+        color: forestgreen;
+        background-color: rgb(20, 20, 20);
+        position: absolute;
+        bottom:85px;
+        right: 85px;
+        text-align: center;
+        box-shadow: inset 0 0 0 2px forestgreen;
+        border: #505050 1px solid;
+        border-radius: 5px;
+    }
+    .nevHiFi{
+        position:absolute;
+        font-family: 'Orbitron','Noto Sans JP', sans-serif;
+        transform: skew(315deg, 0deg) scale(2.5,1);
+        bottom: 19%;
+        left: 74px;
+        text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.4);
+    }
+}
+.newTape,.information{
+    display: none;
+    z-index: 99;
+    background-color: #00000080;
+    inset: 0;
+    position: absolute;
+    .outerPop{
+        position: absolute;
+        inset: 0;
+    }
+    .innerPop{
+        &::before{
+            content: "";
+            position: absolute;
+            right: -1.25rem;
+            top: -1.25rem;
+            background-color: $popMain;
+            height: 4rem;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            mix-blend-mode: multiply;
+        }
+        position: absolute;
+        width: 450px;
+        height: 350px;
+        max-width: 80vw;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: $popMain;
+        border-radius: 35px;
+        padding: 35px;
+        box-sizing: border-box;
+        box-shadow: inset 0 0 0px 10px $popHighlight,
+        0px 0px 0 10px $popMain;
+        .innerContent{
+            height: 100%;
+            overflow-y: auto;
+            word-break: break-word;
+            font-family: Arial, Helvetica, sans-serif;
+            .examples{
+                font-size: 0.8rem;
+                width: 100%;
+                margin: 1rem auto;
+                border: solid 1px $popHighlight;
+                box-sizing: border-box;
+                padding: 2%;
+                .head{
+                    color: $popHighlight;
+                    font-weight: bold;
+                }
+            }
+            form{
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                margin: 10px auto;
+                input{
+                    margin: 0px 10px 0 5px;
+                    width: 70%;
+                    height: 20px;
+                    border: 1px solid $popHighlight;
+                    padding: 1px;
+                }
+                .submit{
+                    cursor: pointer;
+                    border: solid 1px $popHighlight;
+                    width: 13%;
+                    height:20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1px;
+                    &:hover{
+                        background-color: $popHighlight;
+                        color: $popMain;
+                    }
+                }
+            }
+        }
+        .closeButton{
+            cursor: pointer;
+            position: absolute;
+            right:0;
+            top:0;
+            background-color: $popMain;
+            height: 1.5rem;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 0 10px $popHighlight;
+            border-radius: 50%;
+            font-weight: bold;
+            &:hover{
+                background-color: $popHighlight;
+                color: $popMain;
+            }
+        }
+    }
+}
+.information{
+    .innerPop{
+        font-family: Arial, Helvetica, sans-serif;
+        .title{
+            font-family: 'Orbitron','Noto Sans JP', sans-serif;
+            margin: 0;
+        }
+        .about{
+            font-family: 'DotGothic16',sans-serif;
+            font-style: italic;
+            margin: 1rem;
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@keyframes completeSpinLeft {
+    from {transform: translate(50%,-50%) rotate(0deg);}
+    to {transform: translate(50%,-50%) rotate(360deg);}
+}
+
+@keyframes completeSpinRight {
+    from {transform: translate(-50%,-50%) rotate(0deg);}
+    to {transform: translate(-50%,-50%) rotate(360deg);}
+}
+
+@keyframes pauseFlash {
+    from {background-color: $buttonCol;}
+    to {background-color: #8aff31;}
+}
