@@ -1,0 +1,1094 @@
+/*
+Hey there, friend.
+Checking out the css file, huh?
+Hope you find everything you need.
+If not feel free to drop me a line.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&family=Orbitron:wght@900&family=DotGothic16&family=VT323&display=swap");
+iframe#player {
+  position: absolute;
+  left: -500%;
+  width: 500px !important;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-image: url("../uk-number-ones/metaImg.jpg");
+}
+
+body::before {
+  content: "";
+  background-color: #240024;
+  width: 100%;
+  height: 3000px;
+  opacity: 0.8;
+}
+
+.cassetteDeck {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  border: solid 2px black;
+  width: 500px;
+  height: 400px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 20px 5px #8b497f;
+          box-shadow: 0 0 20px 5px #8b497f;
+}
+
+.cassetteDeck .videoTitle {
+  font-family: 'DotGothic16', monospace;
+  width: 70%;
+  height: 35px;
+  right: 50%;
+  -webkit-transform: translate(50%, 0);
+          transform: translate(50%, 0);
+  position: absolute;
+  top: 10px;
+  color: forestgreen;
+  background-color: #141414;
+  -webkit-box-shadow: inset 0 0 0 2px forestgreen;
+          box-shadow: inset 0 0 0 2px forestgreen;
+  border: #505050 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24px;
+}
+
+.cassetteDeck .cassetteTape {
+  position: absolute;
+  left: -32px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.cassetteDeck .cassetteTape .videoTitleTape {
+  font-family: 'Orbitron','Noto Sans JP', sans-serif;
+  width: 80%;
+  right: 50%;
+  -webkit-transform: translate(50%, 0) rotate(180deg);
+          transform: translate(50%, 0) rotate(180deg);
+  position: absolute;
+  top: 235px;
+  background-color: #cbe188;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24px;
+}
+
+.cassetteDeck .cassetteTape .sideLabel {
+  position: absolute;
+  border-radius: 50%;
+  bottom: 50%;
+  right: 12%;
+  width: 40px;
+  font-size: 30px;
+  aspect-ratio: 1 / 1;
+  background-color: #197a5f;
+  font-family: 'Orbitron', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: rotate(180deg) translate(0, -50%);
+          transform: rotate(180deg) translate(0, -50%);
+}
+
+.cassetteDeck .cassetteTape .maxwell {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  font-size: 18px;
+  font-family: 'Orbitron', sans-serif;
+  -webkit-transform: rotate(180deg) translate(50%, -50%);
+          transform: rotate(180deg) translate(50%, -50%);
+  color: #8faf8a;
+}
+
+.cassetteDeck .cassetteTape .magTape {
+  position: absolute;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cassetteDeck .cassetteTape .magTape .magTapeFrame {
+  background-color: #875f5f;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.cassetteDeck .cassetteTape .magTape .tapeReel {
+  min-width: 60px;
+  max-width: 150px;
+  aspect-ratio: 1 / 1;
+  background-color: #421e1e;
+  border-radius: 50%;
+  position: relative;
+  border: 1px solid black;
+}
+
+.cassetteDeck .cassetteTape .magTape .tapeReel .strand {
+  position: absolute;
+  background-color: #421e1e;
+  width: 3px;
+  height: 100px;
+  top: 50%;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  border: 1px solid black;
+  z-index: -1;
+}
+
+.cassetteDeck .cassetteTape .magTape.leftTape {
+  left: 0%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+.cassetteDeck .cassetteTape .magTape.leftTape .tapeReel {
+  width: 60px;
+}
+
+.cassetteDeck .cassetteTape .magTape.leftTape .tapeReel .strand {
+  left: 0;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.cassetteDeck .cassetteTape .magTape.rightTape {
+  right: 0%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.cassetteDeck .cassetteTape .magTape.rightTape .tapeReel {
+  width: 150px;
+}
+
+.cassetteDeck .cassetteTape .magTape.rightTape .tapeReel .strand {
+  right: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.cassetteDeck .cassetteTape .spinnerBase {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.cassetteDeck .cassetteTape .spinnerBase.leftBase {
+  left: 20%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+.cassetteDeck .cassetteTape .spinnerBase.rightBase {
+  right: 20%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.cassetteDeck .cassetteTape .spinner {
+  -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+          clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  width: 50px;
+  height: 50px;
+  background-color: #2c4f50;
+  position: absolute;
+  top: 50%;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.cassetteDeck .cassetteTape .spinner.leftSpinner {
+  -webkit-animation-name: completeSpinLeft;
+          animation-name: completeSpinLeft;
+  left: 20%;
+}
+
+.cassetteDeck .cassetteTape .spinner.rightSpinner {
+  -webkit-animation-name: completeSpinRight;
+          animation-name: completeSpinRight;
+  right: 20%;
+}
+
+.cassetteDeck .cassetteTape .spinner.paused {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.cassetteDeck .cassetteTape .spinner .spinnerCentre {
+  width: 5px;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5), 0 0 0 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5), 0 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.cassetteDeck .cassetteTape .spinner .spinnerNub {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+.cassetteDeck .cassetteTape .spinner .spinnerNub.nubOne {
+  top: -44px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
+}
+
+.cassetteDeck .cassetteTape .spinner .spinnerNub.nubTwo {
+  top: -22px;
+  right: -37px;
+}
+
+.cassetteDeck .cassetteTape .spinner .spinnerNub.nubThree {
+  bottom: -22px;
+  right: -37px;
+}
+
+.cassetteDeck .cassetteTape .spinner .spinnerNub.nubFour {
+  bottom: -44px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
+}
+
+.cassetteDeck .cassetteTape .spinner .spinnerNub.nubFive {
+  top: -22px;
+  left: -37px;
+}
+
+.cassetteDeck .cassetteTape .spinner .spinnerNub.nubSix {
+  bottom: -22px;
+  left: -37px;
+}
+
+.cassetteDeck .cassetteTape .mandy {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.cassetteDeck .cassetteTape .mandy .circle {
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: red;
+  bottom: 0;
+}
+
+.cassetteDeck .cassetteTape .mandy .whisp {
+  border-radius: 50%;
+  width: 30%;
+  aspect-ratio: 1 / 1;
+  background-color: red;
+  position: absolute;
+}
+
+.cassetteDeck .cassetteTape .mandy .whisp.whispOne {
+  bottom: 70%;
+  left: -30%;
+}
+
+.cassetteDeck .cassetteTape .mandy .whisp.whispTwo {
+  bottom: 120%;
+  left: -30%;
+}
+
+.cassetteDeck .cassetteTape .mandy .whisp.whispThree {
+  bottom: 160%;
+  left: 0%;
+}
+
+.cassetteDeck .stereo .casing {
+  position: absolute;
+  inset: 0;
+  background-color: grey;
+  -webkit-clip-path: polygon(0% 0%, 0% 35%, 80% 35%, 80% 65%, 0% 65%, 0% 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 35%, 80% 35%, 80% 65%, 0% 65%, 0% 100%, 100% 100%, 100% 0%);
+}
+
+.cassetteDeck .stereo .casing .dots {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  bottom: 26%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.cassetteDeck .stereo .casing .dots .dot {
+  border-radius: 50%;
+  width: 12px;
+  aspect-ratio: 1 / 1;
+  background-color: #b10000;
+}
+
+.cassetteDeck .stereo .casing .dots .dot.dotsFour {
+  background-color: #bfc13d;
+}
+
+.cassetteDeck .stereo .casing .windowFrameOne {
+  background-color: #383838;
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  -webkit-clip-path: polygon(0% 0%, 90% 0%, 90% 65%, 101% 100%, 100% 100%, 89% 65%, 89% 1%, 0% 1%);
+          clip-path: polygon(0% 0%, 90% 0%, 90% 65%, 101% 100%, 100% 100%, 89% 65%, 89% 1%, 0% 1%);
+}
+
+.cassetteDeck .stereo .casing .windowFrameTwo {
+  background-color: #545454;
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  -webkit-clip-path: polygon(0% 65%, 50% 65%, 50% 73%, 84% 73%, 84% 65%, 88% 65%, 85% 66%, 85% 74%, 49% 74%, 49% 66%, 0% 66%);
+          clip-path: polygon(0% 65%, 50% 65%, 50% 73%, 84% 73%, 84% 65%, 88% 65%, 85% 66%, 85% 74%, 49% 74%, 49% 66%, 0% 66%);
+}
+
+.cassetteDeck .stereo .casing .windowFrameThree {
+  background-color: #383838;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: 68px;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFour {
+  border: solid 3px #545454;
+  width: 70px;
+  height: 100%;
+  position: absolute;
+  bottom: 105px;
+  right: -35px;
+  border-radius: 20px;
+  background-color: #b10000;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFour::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  left: 10px;
+  border: solid 3px #545454;
+  background-color: gray;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFive {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 350px;
+  right: 0;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFive .solidHorBlueBar {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-color: #3b3b74;
+  border: solid 3px #545454;
+  border-left: 0;
+  border-right: 0;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFive .solidHorBlueBar.horBarTop {
+  top: 75px;
+  left: -20px;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFive .solidHorBlueBar.horBarBottom {
+  top: 307px;
+  right: -9px;
+  width: 15px;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFive .solidCorBlueBar {
+  position: absolute;
+  width: 12px;
+  height: 10px;
+  background-color: #3b3b74;
+  border: solid 3px #545454;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 0 10px 0 0;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFive .solidCorBlueBar.topCor {
+  right: 5px;
+  top: 75px;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFive .solidCorBlueBar.bottomCor {
+  right: 6px;
+  top: 310px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.cassetteDeck .stereo .casing .windowFrameFive .solidVerBlueBar {
+  position: absolute;
+  width: 10px;
+  height: 191px;
+  background-color: #3b3b74;
+  border: solid 3px #545454;
+  border-top: 0;
+  border-bottom: 0;
+  right: 5px;
+  top: 88px;
+}
+
+.cassetteDeck .stereo .casing .windowFrameFive .solidVerBlueBar.lowerVerBlue {
+  height: 15px;
+  top: 295px;
+}
+
+.cassetteDeck .stereo .casing .windowFrameSix .sixBar {
+  height: 5px;
+  width: 20%;
+  position: absolute;
+  background-color: #bfc13d;
+  border: solid 3px #545454;
+  border-left: 0;
+  border-right: 0;
+}
+
+.cassetteDeck .stereo .casing .windowFrameSix .sixBar.topSix {
+  top: 20px;
+}
+
+.cassetteDeck .stereo .casing .windowFrameSix .sixBar.middleSix {
+  top: 35px;
+  right: 0;
+}
+
+.cassetteDeck .stereo .casing .windowFrameSix .sixBar.bottomSix {
+  top: 50px;
+}
+
+.cassetteDeck .stereo .glassFront {
+  background-color: rgba(100, 185, 185, 0.36);
+  width: 80%;
+  height: 30%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  border: solid 2px #343485;
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+  -webkit-box-shadow: 0 0 0 10px grey, 0 0 0 12px #545454;
+          box-shadow: 0 0 0 10px grey, 0 0 0 12px #545454;
+}
+
+.cassetteDeck .stereo .glassFront .reflectLight {
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 100%;
+  height: 65%;
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  border-radius: 0 5px 0 0;
+}
+
+.cassetteDeck .stereo .glassFront .strips {
+  padding-top: 10px;
+  -webkit-clip-path: polygon(2% 0%, 100% 0%, 25% 78%, 67% 81%, 51% 100%, 2% 100%);
+          clip-path: polygon(2% 0%, 100% 0%, 25% 78%, 67% 81%, 51% 100%, 2% 100%);
+}
+
+.cassetteDeck .stereo .glassFront .strips .strip {
+  width: 100%;
+  height: 10px;
+  margin-bottom: 10px;
+}
+
+.cassetteDeck .stereo .glassFront .strips .strip.white {
+  background-color: #e0fbff;
+}
+
+.cassetteDeck .stereo .glassFront .strips .strip.red {
+  background-color: #b10000;
+}
+
+.cassetteDeck .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: absolute;
+  width: 90%;
+  bottom: 10px;
+}
+
+.cassetteDeck .buttons .button {
+  width: 50px;
+  height: 50px;
+  background-color: #bfbfbf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: solid 2px #383838;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.cassetteDeck .buttons .button:not(.ytButton)::after {
+  content: "";
+  border: 1px solid #424242;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 40px;
+  height: 30px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.cassetteDeck .buttons .button.volDown .mark {
+  width: 30px;
+  height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.cassetteDeck .buttons .button.volDown .mark .speaker {
+  width: 40%;
+  margin-right: 10%;
+  height: 100%;
+  background-color: #424242;
+  -webkit-clip-path: polygon(0% 25%, 50% 25%, 100% 0%, 100% 100%, 50% 75%, 0 75%);
+          clip-path: polygon(0% 25%, 50% 25%, 100% 0%, 100% 100%, 50% 75%, 0 75%);
+}
+
+.cassetteDeck .buttons .button.volUp .mark {
+  width: 30px;
+  height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.cassetteDeck .buttons .button.volUp .mark .speaker {
+  width: 40%;
+  margin-right: 10%;
+  height: 100%;
+  background-color: #424242;
+  -webkit-clip-path: polygon(0% 25%, 50% 25%, 100% 0%, 100% 100%, 50% 75%, 0 75%);
+          clip-path: polygon(0% 25%, 50% 25%, 100% 0%, 100% 100%, 50% 75%, 0 75%);
+}
+
+.cassetteDeck .buttons .button.volUp .mark .blip {
+  height: 50%;
+  aspect-ratio: 1/1;
+  background-color: #424242;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 40%;
+  top: 50%;
+}
+
+.cassetteDeck .buttons .button.volUp .mark .waves {
+  width: 50%;
+  height: 100%;
+  -webkit-clip-path: polygon(25% 25%, 100% 0%, 60% 30%, 90% 50%, 60% 70%, 100% 100%, 25% 75%);
+          clip-path: polygon(25% 25%, 100% 0%, 60% 30%, 90% 50%, 60% 70%, 100% 100%, 25% 75%);
+  background-image: radial-gradient(5px at left, #0000 100%, #424242);
+}
+
+.cassetteDeck .buttons .button.prev .mark {
+  width: 30px;
+  height: 15px;
+  background-color: #424242;
+  -webkit-clip-path: polygon(0% 0%, 18% 0%, 18% 50%, 59% 0%, 59% 50%, 100% 0%, 100% 100%, 59% 50%, 59% 100%, 18% 50%, 18% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 18% 0%, 18% 50%, 59% 0%, 59% 50%, 100% 0%, 100% 100%, 59% 50%, 59% 100%, 18% 50%, 18% 100%, 0% 100%);
+}
+
+.cassetteDeck .buttons .button.pause {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-name: pauseFlash;
+          animation-name: pauseFlash;
+}
+
+.cassetteDeck .buttons .button.pause:not(.readyToPlay) {
+  -webkit-animation: none;
+          animation: none;
+}
+
+.cassetteDeck .buttons .button.pause .mark {
+  width: 30px;
+  height: 15px;
+  background-color: #424242;
+  -webkit-clip-path: polygon(0% 0%, 50% 50%, 50% 0, 67% 0, 67% 50%, 83% 50%, 83% 0%, 100% 0%, 100% 100%, 83% 100%, 83% 50%, 67% 50%, 67% 100%, 50% 100%, 50% 50%, 0% 100%);
+          clip-path: polygon(0% 0%, 50% 50%, 50% 0, 67% 0, 67% 50%, 83% 50%, 83% 0%, 100% 0%, 100% 100%, 83% 100%, 83% 50%, 67% 50%, 67% 100%, 50% 100%, 50% 50%, 0% 100%);
+}
+
+.cassetteDeck .buttons .button.next .mark {
+  width: 30px;
+  height: 15px;
+  background-color: #424242;
+  -webkit-clip-path: polygon(0% 0%, 41% 50%, 41% 0, 82% 50%, 82% 50%, 82% 0%, 100% 0%, 100% 100%, 82% 100%, 82% 50%, 41% 100%, 41% 50%, 0% 100%);
+          clip-path: polygon(0% 0%, 41% 50%, 41% 0, 82% 50%, 82% 50%, 82% 0%, 100% 0%, 100% 100%, 82% 100%, 82% 50%, 41% 100%, 41% 50%, 0% 100%);
+}
+
+.cassetteDeck .buttons .button.restart {
+  display: none;
+}
+
+.cassetteDeck .buttons .button.eject .mark {
+  width: 30px;
+  height: 15px;
+  background-color: #424242;
+  -webkit-clip-path: polygon(50% 0%, 75% 50%, 50% 50%, 50% 70%, 75% 70%, 75% 100%, 25% 100%, 25% 70%, 50% 70%, 50% 50%, 25% 50%);
+          clip-path: polygon(50% 0%, 75% 50%, 50% 50%, 50% 70%, 75% 70%, 75% 100%, 25% 100%, 25% 70%, 50% 70%, 50% 50%, 25% 50%);
+}
+
+.cassetteDeck .buttons .button.ytButton .butt {
+  width: 40px;
+  height: 30px;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+
+.cassetteDeck .buttons .button.ytButton .butt .triangle {
+  background-color: white;
+  -webkit-clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  width: 15px;
+  aspect-ratio: 1/1;
+}
+
+.cassetteDeck .buttons .button.info .parachuter {
+  border: 1px solid #424242;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.cassetteDeck .buttons .button.info .parachuter .head {
+  background-color: #424242;
+  width: 10px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.cassetteDeck .buttons .button.info .parachuter .body {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  -webkit-clip-path: polygon(99% 0%, 79% 22%, 51% 22%, 51% 27%, 79% 27%, 45% 69%, 15% 62%, 15% 66%, 43% 74%, 37% 112%, 40% 112%, 48% 72%, 82% 31%, 90% 69%, 94% 69%, 86% 29%, 99% 8%);
+          clip-path: polygon(99% 0%, 79% 22%, 51% 22%, 51% 27%, 79% 27%, 45% 69%, 15% 62%, 15% 66%, 43% 74%, 37% 112%, 40% 112%, 48% 72%, 82% 31%, 90% 69%, 94% 69%, 86% 29%, 99% 8%);
+  width: 50%;
+  height: 50%;
+  background-color: #424242;
+}
+
+.cassetteDeck .buttons .button.info .parachuter .chuteRound {
+  position: absolute;
+  width: 25px;
+  height: 20px;
+  border-radius: 50% 50% 0 0;
+  -webkit-box-shadow: inset 0 0 0 2px #424242;
+          box-shadow: inset 0 0 0 2px #424242;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 50%, 0 50%);
+          clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 50%, 0 50%);
+  -webkit-transform: rotate(38deg) translate(9px, -9px);
+          transform: rotate(38deg) translate(9px, -9px);
+}
+
+.cassetteDeck .buttons .button:hover {
+  background-color: #535353;
+}
+
+.cassetteDeck .volBarContainer {
+  position: absolute;
+  left: 0px;
+  bottom: 50%;
+  -webkit-transform: translate(0, 50%);
+          transform: translate(0, 50%);
+  width: 10px;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 5px;
+  border: solid black 1px;
+  background-color: #3c3c3c;
+}
+
+.cassetteDeck .volBarContainer:before {
+  content: "";
+  background-color: #bebebe;
+  width: 3px;
+  height: 100%;
+}
+
+.cassetteDeck .volBarContainer .volBar {
+  height: 0%;
+  width: 100%;
+}
+
+.cassetteDeck .time {
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 0 1rem;
+  color: forestgreen;
+  background-color: #141414;
+  position: absolute;
+  bottom: 85px;
+  right: 85px;
+  text-align: center;
+  -webkit-box-shadow: inset 0 0 0 2px forestgreen;
+          box-shadow: inset 0 0 0 2px forestgreen;
+  border: #505050 1px solid;
+  border-radius: 5px;
+}
+
+.cassetteDeck .nevHiFi {
+  position: absolute;
+  font-family: 'Orbitron','Noto Sans JP', sans-serif;
+  -webkit-transform: skew(315deg, 0deg) scale(2.5, 1);
+          transform: skew(315deg, 0deg) scale(2.5, 1);
+  bottom: 19%;
+  left: 74px;
+  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.4);
+}
+
+.newTape, .information {
+  display: none;
+  z-index: 99;
+  background-color: #00000080;
+  inset: 0;
+  position: absolute;
+}
+
+.newTape .outerPop, .information .outerPop {
+  position: absolute;
+  inset: 0;
+}
+
+.newTape .innerPop, .information .innerPop {
+  position: absolute;
+  width: 450px;
+  height: 350px;
+  max-width: 80vw;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 35px;
+  padding: 35px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: inset 0 0 0px 10px purple, 0px 0px 0 10px white;
+          box-shadow: inset 0 0 0px 10px purple, 0px 0px 0 10px white;
+}
+
+.newTape .innerPop::before, .information .innerPop::before {
+  content: "";
+  position: absolute;
+  right: -1.25rem;
+  top: -1.25rem;
+  background-color: white;
+  height: 4rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+}
+
+.newTape .innerPop .innerContent, .information .innerPop .innerContent {
+  height: 100%;
+  overflow-y: auto;
+  word-break: break-word;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.newTape .innerPop .innerContent .examples, .information .innerPop .innerContent .examples {
+  font-size: 0.8rem;
+  width: 100%;
+  margin: 1rem auto;
+  border: solid 1px purple;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2%;
+}
+
+.newTape .innerPop .innerContent .examples .head, .information .innerPop .innerContent .examples .head {
+  color: purple;
+  font-weight: bold;
+}
+
+.newTape .innerPop .innerContent form, .information .innerPop .innerContent form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 10px auto;
+}
+
+.newTape .innerPop .innerContent form input, .information .innerPop .innerContent form input {
+  margin: 0px 10px 0 5px;
+  width: 70%;
+  height: 20px;
+  border: 1px solid purple;
+  padding: 1px;
+}
+
+.newTape .innerPop .innerContent form .submit, .information .innerPop .innerContent form .submit {
+  cursor: pointer;
+  border: solid 1px purple;
+  width: 13%;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1px;
+}
+
+.newTape .innerPop .innerContent form .submit:hover, .information .innerPop .innerContent form .submit:hover {
+  background-color: purple;
+  color: white;
+}
+
+.newTape .innerPop .closeButton, .information .innerPop .closeButton {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: white;
+  height: 1.5rem;
+  aspect-ratio: 1 / 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0 0 10px purple;
+          box-shadow: 0 0 0 10px purple;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.newTape .innerPop .closeButton:hover, .information .innerPop .closeButton:hover {
+  background-color: purple;
+  color: white;
+}
+
+.information .innerPop {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.information .innerPop .title {
+  font-family: 'Orbitron','Noto Sans JP', sans-serif;
+  margin: 0;
+}
+
+.information .innerPop .about {
+  font-family: 'DotGothic16',sans-serif;
+  font-style: italic;
+  margin: 1rem;
+  font-size: 0.8rem;
+}
+
+@-webkit-keyframes completeSpinLeft {
+  from {
+    -webkit-transform: translate(50%, -50%) rotate(0deg);
+            transform: translate(50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(50%, -50%) rotate(360deg);
+            transform: translate(50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes completeSpinLeft {
+  from {
+    -webkit-transform: translate(50%, -50%) rotate(0deg);
+            transform: translate(50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(50%, -50%) rotate(360deg);
+            transform: translate(50%, -50%) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes completeSpinRight {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes completeSpinRight {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes pauseFlash {
+  from {
+    background-color: #bfbfbf;
+  }
+  to {
+    background-color: #8aff31;
+  }
+}
+
+@keyframes pauseFlash {
+  from {
+    background-color: #bfbfbf;
+  }
+  to {
+    background-color: #8aff31;
+  }
+}
