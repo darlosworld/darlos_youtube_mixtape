@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darlo's YouTube Mixtape - Darlo's World.co.uk</title>
+    <meta name="description" content="Darlo has a playlist on YouTube of songs to listen to at anytime for any purpose. Why not listen to them via mixtape?">
+    <meta name="author" content="Darlo">
+        
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Darlo's YouTube Mixtape - Darlo's World.co.uk">
+    <meta property="og:description" content="Darlo has a playlist on YouTube of songs to listen to at anytime for any purpose. Why not listen to them via mixtape?">
+    <meta property="og:image" content="https://www.darlosworld.co.uk/img/darlos_youtube_mixtape.jpg">
+    <meta property="og:image:alt" content="Darlo trying to sing along.">
+    <meta property="og:image:url" content="https://www.darlosworld.co.uk/img/darlos_youtube_mixtape.jpg">
+    <meta property="og:image:secure_url" content="https://www.darlosworld.co.uk/img/darlos_youtube_mixtape.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:height" content="427">
+    <meta property="og:image:width" content="525">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://darlosworld.co.uk/darlos_youtube_mixtape.html">
+    <meta property="og:site_name" content="Darlo's YouTube Mixtape - Darlo's World.co.uk">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@darlosworld">
+    <meta name="twitter:creator" content="@darlosworld">
+    <meta name="twitter:title" content="Darlo's YouTube Mixtape - Darlo's World.co.uk">
+    <meta name="twitter:description" content="Darlo has a playlist on YouTube of songs to listen to at anytime for any purpose. Why not listen to them via mixtape?">
+    <meta name="twitter:image" content="https://www.darlosworld.co.uk/img/darlos_youtube_mixtape.jpg">
+    <meta name="twitter:image:alt" content="Darlo trying to sing along.">
+        
+    <link rel="canonical" href="https://darlosworld.co.uk/darlos_youtube_mixtape.html">
+    <link rel='stylesheet' type='text/css' href='./lib/darlos_youtube_mixtape.css'/>
+</head>
+<body>
+    <div class="information blockBG">
+        <div class="outerPop"></div>
+        <div class="innerPop">
+            <div class="closeButton informationClose">&#10006;</div>
+            <div class="innerContent">
+                <h1 class="title">Darlo's YouTube Mixtape</h1>
+                <div class="about">Darlo has a playlist on YouTube of songs to listen to at anytime for any purpose. Why not listen to them via mixtape?</div>
+                <div class="moreDetails">
+                    <p>
+                        So what's this about then? Like many others I like to listen to music while I'm working. Also like many other folks, I have a bunch of different songs that I can listen to and enjoy at almost any moment. Since YouTube is full of these songs, it was quite easy to make a playlist with them.
+                    </p>
+                    <p>
+                        So why the tape player? In a similar fashion to when I did <a href="./smilky/index.html" target="_blank">Smilky</a> in CSS, after looking at my dad's stereo I started to wonder if a tape deck could be recreated in CSS. And then it hit me that using the YouTube API, something I'd been playing with for my <a href="./uk-number-ones/index.php" target="_blank">UK Number Ones</a> thingy, with a little JavaScript it would be possible to play music and update the song on the tape deck.
+                    </p>
+                    <p>
+                        When I remembered that you could animate rotations in CSS, I started thinking about actually having a tape playing on screen. Then wondered how hard it would be to actually get the tape to transfer between the reels, and before I knew it I had VS Code open and was working on a basic cassette tape.
+                    </p>
+                    <p>
+                        Just under a week later I had the tape player that I had first imagined, but then wanted more. I wanted to add functioning buttons and be able to change the 'tape'.
+                    </p>
+                    <p>
+                        This project has been a huge practice in both JavaScript and CSS (well, SASS). Clip paths have been a major thing here, and some of those stripes sure were a pain (I'm looking at you, red and blue stripes). As the API help section is somewhat lacking, not too many Stack Overflow questions covered topics I needed, I really had to play around with the API and get those hidden gems to get everything going. Lots of bodging, that's for sure!
+                    </p>
+                    <p>
+                        There is a lot of cleaning up in the code I could do, such as cutting out some of the repetitions, but for now someone please stop me before I add even more to this!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newTape blockBG">
+        <div class="outerPop"></div>
+        <div class="innerPop">
+            <div class="closeButton newTapeClose">&#10006;</div>
+            <div class="innerContent">
+                <div class="prompt">
+                    Paste the URL of the song or playlist that you want to play.
+                </div>
+                <form onsubmit="newTape();return false;">
+                    <input id="newTapeURL" name="newTapeURL" type="text" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">
+                    <div class="submit">OK</div>
+                </form>
+                <div class="examples">
+                    <strong>Examples:</strong><br>
+                    <span class="head">Playlist:</span> https://www.youtube.com/playlist?list=OLAK5uy_mwhmpStQ41tx1YVsNmK-0-o2s41knauy4<br><br>
+                    <span class="head">Video:</span> https://www.youtube.com/watch?v=kT8cX2-_7pQ<br><br>
+                    <span class="head">Video Within Playlist:</span> https://www.youtube.com/watch?v=IHEpGHsKdV0&list=PLcIDqHah6ZnDfckv4K6epvr3i6TbExM_8&index=5
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='player'></div>
+    <div class="cassetteDeck">
+        <div class="cassetteTape">
+            <div class="magTape leftTape">
+                <div class="tapeReel">
+                    <div class="strand"></div>
+                </div>
+                <div class="magTapeFrame"></div>
+            </div>
+            <div class="spinnerBase leftBase"></div>
+            <div class="spinner leftSpinner paused">
+                <div class="spinnerCentre"></div>
+                <div class="spinnerNub nubOne"></div>
+                <div class="spinnerNub nubTwo"></div>
+                <div class="spinnerNub nubThree"></div>
+                <div class="spinnerNub nubFour"></div>
+                <div class="spinnerNub nubFive"></div>
+                <div class="spinnerNub nubSix"></div>
+            </div>
+            <div class="magTape rightTape">
+                <div class="tapeReel">
+                    <div class="strand"></div>
+                </div>
+                <div class="magTapeFrame"></div>
+            </div>
+            <div class="spinnerBase rightBase"></div>
+            <div class="spinner rightSpinner paused">
+                <div class="spinnerCentre"></div>
+                <div class="spinnerNub nubOne"></div>
+                <div class="spinnerNub nubTwo"></div>
+                <div class="spinnerNub nubThree"></div>
+                <div class="spinnerNub nubFour"></div>
+                <div class="spinnerNub nubFive"></div>
+                <div class="spinnerNub nubSix"></div>
+            </div>
+            <div class="videoTitleTape">Loading ...</div>
+            <div class="sideLabel">A</div>
+            <div class="maxwell">maxwell</div>
+            <div class="mandy">
+                <div class="circle"></div>
+                <div class="whisp whispOne"></div>
+                <div class="whisp whispTwo"></div>
+                <div class="whisp whispThree"></div>
+            </div>
+        </div>
+        <div class="stereo">
+            <div class="casing">
+                <div class="windowFrameOne"></div>
+                <div class="windowFrameTwo"></div>
+                <div class="windowFrameThree"></div>
+                <div class="windowFrameFour"></div>
+                <div class="windowFrameFive">
+                    <div class="solidHorBlueBar horBarTop"></div>
+                    <div class="solidCorBlueBar topCor"></div>
+                    <div class="solidVerBlueBar"></div>
+                    <div class="solidVerBlueBar lowerVerBlue"></div>
+                    <div class="solidCorBlueBar bottomCor"></div>
+                    <div class="solidHorBlueBar horBarBottom"></div>
+                    <div class="top"></div>
+                </div>
+                <div class="windowFrameSix">
+                    <div class="sixBar topSix"></div>
+                    <div class="sixBar middleSix"></div>
+                    <div class="sixBar bottomSix"></div>
+                </div>
+                <div class="dots">
+                    <div class="dot dotsOne"></div>
+                    <div class="dot dotsTwo"></div>
+                    <div class="dot dotsThree"></div>
+                    <div class="dot dotsFour"></div>
+                </div>
+            </div>
+            <div class="glassFront">
+                <div class="reflectLight"></div>
+                <div class="strips">
+                    <div class="strip white"></div>
+                    <div class="strip white"></div>
+                    <div class="strip white"></div>
+                    <div class="strip red"></div>
+                </div>
+            </div>
+        </div>
+        <div class="videoTitle">Loading ...</div>
+        <div class="buttons">
+            <div class="volDown button">
+                <div class="mark">
+                    <div class="speaker"></div>
+                </div>
+            </div>
+            <div class="volUp button">
+                <div class="mark">
+                    <div class="blip"></div>
+                    <div class="speaker"></div>
+                    <div class="waves"></div>
+                </div>
+            </div>
+            <div class="prev button">
+                <div class="mark"></div>
+            </div>
+            <div class="pause button">
+                <div class="mark"></div>
+            </div>
+            <div class="next button">
+                <div class="mark"></div>
+            </div>
+            <div class="restart button">
+            </div>
+            <div class="eject button">
+                <div class="mark"></div>
+            </div>
+            <div class="ytButton button">
+                <div class="butt">
+                    <div class="triangle"></div>
+                </div>
+            </div>
+            <div class="info button">
+                <div class="parachuter">
+                    <div class="chuteRound"></div>
+                    <div class="head"></div>
+                    <div class="body"></div>
+                </div>
+            </div>
+        </div>
+        <div class="volBarContainer">
+            <div class="volBar"></div>
+        </div>
+        <div class="time">
+            <span class="current">0:00</span> / 
+            <span class="duration">0:00</span>
+        </div>
+        <div class="nevHiFi">NEV-Hi-Fi</div>
+    </div>
+    
+    <script src="./lib/darlos_youtube_mixtape.js"></script>
+    
+</body>
+</html>
