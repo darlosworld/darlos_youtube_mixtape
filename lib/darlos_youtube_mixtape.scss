@@ -824,12 +824,12 @@ body{
 
 @keyframes completeSpinLeft {
     from {transform: translate(50%,-50%) rotate(0deg);}
-    to {transform: translate(50%,-50%) rotate(360deg);}
+    to {transform: translate(50%,-50%) rotate(-360deg);}
 }
 
 @keyframes completeSpinRight {
     from {transform: translate(-50%,-50%) rotate(0deg);}
-    to {transform: translate(-50%,-50%) rotate(360deg);}
+    to {transform: translate(-50%,-50%) rotate(-360deg);}
 }
 
 @keyframes pauseFlash {
