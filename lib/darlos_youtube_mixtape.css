@@ -1037,8 +1037,8 @@ body::before {
             transform: translate(50%, -50%) rotate(0deg);
   }
   to {
-    -webkit-transform: translate(50%, -50%) rotate(360deg);
-            transform: translate(50%, -50%) rotate(360deg);
+    -webkit-transform: translate(50%, -50%) rotate(-360deg);
+            transform: translate(50%, -50%) rotate(-360deg);
   }
 }
 
@@ -1048,8 +1048,8 @@ body::before {
             transform: translate(50%, -50%) rotate(0deg);
   }
   to {
-    -webkit-transform: translate(50%, -50%) rotate(360deg);
-            transform: translate(50%, -50%) rotate(360deg);
+    -webkit-transform: translate(50%, -50%) rotate(-360deg);
+            transform: translate(50%, -50%) rotate(-360deg);
   }
 }
 
@@ -1059,8 +1059,8 @@ body::before {
             transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-360deg);
+            transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
 
@@ -1070,8 +1070,8 @@ body::before {
             transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-360deg);
+            transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
 
